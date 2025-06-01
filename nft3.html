@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFT Marketplace</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="nft.css">
+</head>
+<body>
+  <div class="container">
+    <div class="marketplace">
+      <!-- Mobile Filter Toggle -->
+      <button class="mobile-filter-toggle" id="mobileFilterToggle">
+        <i class="fas fa-filter"></i>
+        Filters
+      </button>
+      
+      <!-- Sidebar Overlay (Mobile) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+      
+      <!-- Sidebar Filters -->
+      <aside class="sidebar" id="sidebar">
+        <h3>Filters</h3>
+        
+        <!-- Status Filter -->
+        <div class="filter-section">
+          <h4>Status</h4>
+          <div class="filter-option">
+            <input type="checkbox" id="status-buy-now">
+            <label for="status-buy-now">Buy Now</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="status-auction">
+            <label for="status-auction">On Auction</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="status-selling">
+            <label for="status-selling">Looking to Sell</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="status-offers">
+            <label for="status-offers">Has Offers</label>
+          </div>
+        </div>
+        
+        <!-- Price Filter -->
+        <div class="filter-section">
+          <h4>Price (ETH)</h4>
+          <input type="range" class="price-slider" min="0" max="10" step="0.1" value="10">
+          <div class="price-range">
+            <span>0 ETH</span>
+            <span>10 ETH</span>
+          </div>
+        </div>
+        
+        <!-- Collection Filter -->
+        <div class="filter-section">
+          <h4>Collection</h4>
+          <select class="w-full">
+            <option>All Collections</option>
+            <option>Treeverse</option>
+            <option>CryptoPunks</option>
+            <option>Bored Ape</option>
+            <option>Art Blocks</option>
+            <option>Decentraland</option>
+          </select>
+        </div>
+        
+        <!-- Categories Filter -->
+        <div class="filter-section">
+          <h4>Categories</h4>
+          <select class="w-full">
+            <option>All Categories</option>
+            <option>Art</option>
+            <option>Collectibles</option>
+            <option>Virtual Worlds</option>
+          </select>
+        </div>
+      </aside>
+      
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="toolbar">
+          <div class="sort-container">
+            <span>Sort by:</span>
+            <select>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest</option>
+              <option>Oldest</option>
+            </select>
+          </div>
+          <button class="view-all">View All Items</button>
+        </div>
+        
+        <!-- NFT Grid -->
+        <div class="nft-grid">
+          <!-- NFT Item 1 -->
+          <div class="nft-card">
+            <div class="nft-image">
+              <img src="img1.png" alt="Treeverse Plots">
+              <span class="badge">Highest bid</span>
+              <div class="options">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="nft-details">
+              <h3 class="nft-title">Treeverse Plots</h3>
+              <div class="nft-price">
+                <span class="price">0.5 ETH</span>
+                <span class="stock">20 in stock</span>
+              </div>
+              <button class="bid-btn">Place Bid</button>
+            </div>
+          </div>
+          
+          <!-- NFT Item 2 -->
+          <div class="nft-card">
+            <div class="nft-image">
+              <img src="img2.png" alt="CryptoPunk #1234">
+              <div class="options">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="nft-details">
+              <h3 class="nft-title">CryptoPunk #1234</h3>
+              <div class="nft-price">
+                <span class="price">2.8 ETH</span>
+                <span class="stock">1 in stock</span>
+              </div>
+              <button class="bid-btn">Place Bid</button>
+            </div>
+          </div>
+          
+          <!-- NFT Item 3 -->
+          <div class="nft-card">
+            <div class="nft-image">
+              <img src="img3.jpg" alt="Bored Ape Yacht Club">
+              <span class="badge">Highest bid</span>
+              <div class="options">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="nft-details">
+              <h3 class="nft-title">Bored Ape Yacht Club</h3>
+              <div class="nft-price">
+                <span class="price">3.2 ETH</span>
+                <span class="stock">5 in stock</span>
+              </div>
+              <button class="bid-btn">Place Bid</button>
+            </div>
+          </div>
+          
+          <!-- NFT Item 4 -->
+          <div class="nft-card">
+            <div class="nft-image">
+              <img src="img4.png" alt="Art Blocks Curated">
+              <div class="options">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="nft-details">
+              <h3 class="nft-title">Art Blocks Curated</h3>
+              <div class="nft-price">
+                <span class="price">1.5 ETH</span>
+                <span class="stock">12 in stock</span>
+              </div>
+              <button class="bid-btn">Place Bid</button>
+            </div>
+          </div>
+          
+          <!-- NFT Item 5 -->
+          <div class="nft-card">
+            <div class="nft-image">
+              <img src="img5.jpg" alt="Decentraland LAND">
+              <span class="badge">Highest bid</span>
+              <div class="options">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="nft-details">
+              <h3 class="nft-title">Decentraland LAND</h3>
+              <div class="nft-price">
+                <span class="price">0.8 ETH</span>
+                <span class="stock">8 in stock</span>
+              </div>
+              <button class="bid-btn">Place Bid</button>
+            </div>
+          </div>
+          
+          <!-- NFT Item 6 -->
+          <div class="nft-card">
+            <div class="nft-image">
+              <img src="img6.jpg" alt="The Sandbox ASSET">
+              <div class="options">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="nft-details">
+              <h3 class="nft-title">The Sandbox ASSET</h3>
+              <div class="nft-price">
+                <span class="price">1.2 ETH</span>
+                <span class="stock">15 in stock</span>
+              </div>
+              <button class="bid-btn">Place Bid</button>
+            </div>
+          </div>
+          
+          <!-- NFT Item 7 -->
+          <div class="nft-card">
+            <div class="nft-image">
+              <img src="img9.jpg" alt="WorldWideWebb Land">
+              <span class="badge">Highest bid</span>
+              <div class="options">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="nft-details">
+              <h3 class="nft-title">WorldWideWebb Land</h3>
+              <div class="nft-price">
+                <span class="price">0.7 ETH</span>
+                <span class="stock">3 in stock</span>
+              </div>
+              <button class="bid-btn">Place Bid</button>
+            </div>
+          </div>
+          
+          <!-- NFT Item 8 -->
+          <div class="nft-card">
+            <div class="nft-image">
+              <img src="img10.jpg" alt="WorldWideWebb Land">
+              <div class="options">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="nft-details">
+              <h3 class="nft-title">Meebit #4567</h3>
+              <div class="nft-price">
+                <span class="price">2.1 ETH</span>
+                <span class="stock">1 in stock</span>
+              </div>
+              <button class="bid-btn">Place Bid</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn">Previous</button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn">Next</button>
+        </div>
+      </main>
+    </div>
+  </div>
+  
+  <script>
+    // Mobile filter toggle functionality
+    const mobileFilterToggle = document.getElementById('mobileFilterToggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    mobileFilterToggle.addEventListener('click', () => {
+      sidebar.classList.add('open');
+      sidebarOverlay.classList.add('open');
+    });
+    
+    sidebarOverlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('open');
+    });
+  </script>
+</body>
+</html>
